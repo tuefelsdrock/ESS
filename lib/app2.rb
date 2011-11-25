@@ -11,6 +11,10 @@ get '/ess' do
   erb :ess
 end
 
+get '/e' do
+  puts "hello"
+end
+
 # rest-ful url
 get '/hello/:name' do
   @name = params[:name] 

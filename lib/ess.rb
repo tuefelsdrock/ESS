@@ -19,6 +19,7 @@ require_relative 'culture'
 
 class Ess 
 
+
   @opts                      # options, a list of choices.
   @option_size               # number of options.
   @population_size           # number of sgenomes in a generation.  
