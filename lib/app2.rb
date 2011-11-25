@@ -1,8 +1,15 @@
 require 'rubygems'
 require 'sinatra'
 
+require_relative 'ess'
+
 # 
 set :views, settings.root + '/../views'
+
+
+get '/ess' do
+  Ess::main('bleh')
+end
 
 # rest-ful url
 get '/hello/:name' do
