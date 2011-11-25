@@ -1,5 +1,0 @@
-
-load 'ess.rb'
-
-
-Ess::main('bleh')
