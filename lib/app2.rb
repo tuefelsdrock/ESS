@@ -12,7 +12,10 @@ get '/ess' do
 end
 
 get '/e' do
-  puts "hello"
+  $stdout = File.new( '../views/essout.erb', 'w' )
+  Ess::main('x') 
+  $stdout = STDOUT
+  erb :essout
 end
 
 # rest-ful url
@@ -28,7 +31,7 @@ get '/hello' do
 end
 
 
-get '/' do
+get '/f' do
   "<h1>Hello World</h1>"
 end
 
