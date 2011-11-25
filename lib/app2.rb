@@ -8,7 +8,7 @@ set :views, settings.root + '/../views'
 
 
 get '/ess' do
-  Ess::main('bleh')
+  erb :ess
 end
 
 # rest-ful url
