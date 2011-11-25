@@ -1,2 +1,10 @@
-<hr size=1>
-<%= Ess::main('x') %>
+
+<%= 
+  $stdout = File.new( 'essout.erb', 'w' )
+  Ess::main('x') 
+  $stdout = STDOUT
+%>
+
+<p>
+<a href=/e>click here</a>
+
