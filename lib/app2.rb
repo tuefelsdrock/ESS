@@ -12,9 +12,6 @@ get '/ess' do
 end
 
 get '/e' do
-  $stdout = File.new( '../views/essout.erb', 'w' )
-  Ess::main('x') 
-  $stdout = STDOUT
   erb :essout
 end
 
