@@ -28,17 +28,5 @@ get '/admin' do
   }
 end
 
-#    #erb :index
-#  get '/user/:username' do
-get '/y' do
-  erb :index
-end
-
-get '/x' do
-  begin 
-    @user = params[:user]
-    "#{@user}"
-  end
-end
 
 
