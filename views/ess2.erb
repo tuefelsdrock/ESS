@@ -1,0 +1,11 @@
+
+<%= 
+  $stdout = File.new( 'views/essout.erb', 'w' )
+  puts "<pre>"
+  Ess::main('x') 
+  $stdout = STDOUT
+%>
+
+<p>
+<a href=/e>click here</a>
+

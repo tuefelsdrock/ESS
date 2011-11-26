@@ -19,7 +19,6 @@ require_relative 'culture'
 
 class Ess 
 
-
   @opts                      # options, a list of choices.
   @option_size               # number of options.
   @population_size           # number of sgenomes in a generation.  
@@ -148,29 +147,6 @@ class Ess
 
   end 
 
-
-
-
-  def self.main(args)  
-
-    #puts "usage:  filename  [maxgens]"
-    fn = 'dummy' # file name 
-
-    arg2 = 20 # max number of generations, if not supplied as arg 2
-
-    ai = Ess.new(arg2)   
-    ai.evolute(fn)
-    
-    if ai.winner 
-      # map @winner to choicelist to show winning answer.
-      choicelist = Chl.new
-      choicelist.readCSVFile(fn)  # read in to get the list to map to the winner
-      choicelist.printSolution(ai.winner)
-    end
- 
-
-
-  end 
 
 
 

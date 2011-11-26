@@ -11,6 +11,11 @@ get '/ess' do
   erb :ess
 end
 
+get '/ess2' do
+  Ess::main('x') 
+  erb :ess2
+end
+
 get '/e' do
   erb :essout
 end
