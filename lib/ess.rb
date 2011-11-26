@@ -30,9 +30,10 @@ class Ess
   @max_weight                # cost cannot exceed this number.
 
   attr_reader :winner        # the winning solution. 
-  attr_reader :so
+  attr_reader :so            # output
 
   def initialize( mg ) 
+    @so=" "
     @max_gens=mg  
     @opts = Chl.new
     @population_size=60 
@@ -46,7 +47,7 @@ class Ess
   def evolute( iFn ) 
 
     if (! @opts.readCSVFile(iFn)) 
-      puts "Input file error.\n"
+      @so << "Input file error.\n"
     end
 
     @opts.printParams                   # display the parameters
@@ -56,7 +57,7 @@ class Ess
 
     # test if minvalue  >  maxpossible
     if ( @opts.isImpossible(@min_value) ) 
-      puts "min benefit " + @min_value + " higher than all possible items."
+      @so << "min benefit " + @min_value + " higher than all possible items."
       return
     end
 
@@ -69,8 +70,7 @@ class Ess
     # loop thru epochs 
     (0...@max_epochs).each do |ep|
 
-      @so=sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
-      #puts sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
+      @so << sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
 
       # raise the minimum acceptable value  
       @min_value=@opts.calcFitness(@winner)*1.23456  if @winner    
@@ -98,7 +98,7 @@ class Ess
 
         # exit if maxgens exceeded.
         if (@gen_num > @max_gens)
-            puts "\nGeneration " + @gen_num.to_s + " reached in this epoch.\n\n"
+            @so << "\nGeneration " + @gen_num.to_s + " reached in this epoch.\n\n"
             break
         end
 
@@ -117,10 +117,10 @@ class Ess
 
     sgenome = pop.get_sgenome(sgenonum) 
 
-    puts sprintf("Gen: %3d Sol: %3d %s: %8.2f %s: %8.2f " ,pop.m_Generation , sgenonum ,  @opts.beneTitle , @opts.getSumValue(sgenome) ,  @opts.costTitle , @opts.getSumWeight(sgenome))
+    @so << sprintf("Gen: %3d Sol: %3d %s: %8.2f %s: %8.2f " ,pop.m_Generation , sgenonum ,  @opts.beneTitle , @opts.getSumValue(sgenome) ,  @opts.costTitle , @opts.getSumWeight(sgenome))
 
     # display the map of the sgenome: | = selected
-    puts sgenome.m_Data.map { |c|  c ? '|' : '-' }.join
+    @so << sgenome.m_Data.map { |c|  c ? '|' : '-' }.join
 
   end 
 
