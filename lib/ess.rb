@@ -30,6 +30,7 @@ class Ess
   @max_weight                # cost cannot exceed this number.
 
   attr_reader :winner        # the winning solution. 
+  attr_reader :so
 
   def initialize( mg ) 
     @max_gens=mg  
@@ -68,7 +69,8 @@ class Ess
     # loop thru epochs 
     (0...@max_epochs).each do |ep|
 
-      puts sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
+      @so=puts sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
+      #puts sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
 
       # raise the minimum acceptable value  
       @min_value=@opts.calcFitness(@winner)*1.23456  if @winner    

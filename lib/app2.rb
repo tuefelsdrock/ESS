@@ -12,8 +12,14 @@ get '/ess' do
 end
 
 get '/ess2' do
-  Ess::main('x') 
+  ai = Ess.new(20)   
+  ai.evolute('x')
+  @outtext=ai.so
   erb :ess2
+end
+ 
+
+
 end
 
 get '/e' do
