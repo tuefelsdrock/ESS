@@ -208,11 +208,11 @@ class Chl
 
   def printParams
 
-    @so << "\nItems in stock: \n" + @totalqty.to_s 
+    @so << "\nItems in stock: " + @totalqty.to_s  + "\n"
     @so << sprintf("Total %s of all items in stock: %.2f \n" , @costTitle ,  @totalcost)
     @so << sprintf("Total %s of all items in stock: %.2f \n" , @beneTitle ,  @totalbene)
-    @so << "Goal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s + "\n"
     @so << sprintf("Possible solutions: %d" ,(2**@totalqty))
+    @so << "\nGoal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s + "\n"
     @so << "\n"
 
   end
@@ -233,7 +233,7 @@ class Chl
   def printSolution(winner)
  
     # titles
-    @so << sprintf("%s\n",@title)
+    @so << sprintf("\n\n%s\n",@title)
 
     # column headings
     @so << sprintf("%s,%s,%s \n",@itemTitle,@beneTitle,@costTitle)
