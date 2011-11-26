@@ -224,7 +224,7 @@ class Chl
     #
     (0...@optionSize).each do |bitidx|
        if (winner.m_Data[bitidx])  
-         @so << "#{@itemID[bitidx]} #{@itemValue[bitidx]} #{@itemWeight[bitidx]}"
+         @so << "#{@itemID[bitidx]} #{@itemValue[bitidx]} #{@itemWeight[bitidx]} \n"
        end
     end
   end
@@ -236,7 +236,7 @@ class Chl
     @so << sprintf("%s\n",@title)
 
     # column headings
-    @so << sprintf("%s,%s,%s",@itemTitle,@beneTitle,@costTitle)
+    @so << sprintf("%s,%s,%s \n",@itemTitle,@beneTitle,@costTitle)
 
     # print the winner
     printTally(winner, true)
@@ -244,7 +244,7 @@ class Chl
     # totals
     m_Value=getSumValue(winner)
     m_Weight=getSumWeight(winner)
-    @so << sprintf("Solution totals: %s: %.2f, %s: %.2f ",@beneTitle, m_Value ,  @costTitle, m_Weight)
+    @so << sprintf("Solution totals: %s: %.2f, %s: %.2f \n",@beneTitle, m_Value ,  @costTitle, m_Weight)
 
   end 
 
