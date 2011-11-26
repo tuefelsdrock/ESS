@@ -208,11 +208,10 @@ class Chl
 
   def printParams
 
-    @so << "\n"
-    @so << "Items in stock: " + @totalqty.to_s 
+    @so << "\nItems in stock: \n" + @totalqty.to_s 
     @so << sprintf("Total %s of all items in stock: %.2f \n" , @costTitle ,  @totalcost)
     @so << sprintf("Total %s of all items in stock: %.2f \n" , @beneTitle ,  @totalbene)
-    @so << "Goal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s
+    @so << "Goal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s + "\n"
     @so << sprintf("Possible solutions: %d" ,(2**@totalqty))
     @so << "\n"
 

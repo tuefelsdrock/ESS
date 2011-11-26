@@ -15,7 +15,12 @@ get '/ess2' do
   ai = Ess.new(20)   
   ai.evolute('x')
   @so=ai.so
+  cl = Chl.new
+  cl.readCSVFile('x')  
+  @so << cl.printSolution(ai.winner)
+ 
   erb :ess2
+
 end
  
 
