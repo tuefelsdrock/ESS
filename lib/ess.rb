@@ -69,7 +69,7 @@ class Ess
     # loop thru epochs 
     (0...@max_epochs).each do |ep|
 
-      @so=puts sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
+      @so=sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
       #puts sprintf("\nStarting epoch %s, using strategy %s.  Population size: %s sgenomes\n" ,ep,strategy,@population_size) 
 
       # raise the minimum acceptable value  
