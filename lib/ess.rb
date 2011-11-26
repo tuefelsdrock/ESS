@@ -33,7 +33,7 @@ class Ess
   attr_reader :so            # output
 
   def initialize( mg ) 
-    @so=" "
+    @so="<pre>"
     @max_gens=mg  
     @opts = Chl.new
     @population_size=60 
@@ -51,6 +51,7 @@ class Ess
     end
 
     @opts.printParams                   # display the parameters
+    @so << @opts.so
     @option_size=@opts.optionSize
     @min_value=@opts.min_value
     @max_weight=@opts.max_weight
@@ -117,7 +118,7 @@ class Ess
 
     sgenome = pop.get_sgenome(sgenonum) 
 
-    @so << sprintf("Gen: %3d Sol: %3d %s: %8.2f %s: %8.2f " ,pop.m_Generation , sgenonum ,  @opts.beneTitle , @opts.getSumValue(sgenome) ,  @opts.costTitle , @opts.getSumWeight(sgenome))
+    @so << sprintf("Gen: %3d Sol: %3d %s: %8.2f %s: %8.2f \n" ,pop.m_Generation , sgenonum ,  @opts.beneTitle , @opts.getSumValue(sgenome) ,  @opts.costTitle , @opts.getSumWeight(sgenome))
 
     # display the map of the sgenome: | = selected
     @so << sgenome.m_Data.map { |c|  c ? '|' : '-' }.join

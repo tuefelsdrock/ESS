@@ -19,7 +19,6 @@ class Chl
   @penalty            
 
   attr_reader :sum_value
-  #@sum_value
   @sum_weight
 
   attr_reader :beneTitle
@@ -28,9 +27,11 @@ class Chl
   attr_reader :goal
   attr_accessor :max_weight
   attr_accessor :min_value
+  attr_reader :so          # output
 
 
   def initialize 
+    @so=" "
     @itemTitle="item"
     @cutval=0.0;           # cutoff value
     @penalty = 3.0         # add this if sum exceeds maxweight in fitness function.
@@ -48,7 +49,6 @@ class Chl
   #
   def calcFitness(sgenome)
  
-    #puts "calcFitness" 
     calcWeightAndValue(sgenome)
 
     if (@sum_weight > @max_weight)
@@ -114,13 +114,11 @@ class Chl
 
 
   def getSumValue(sgenome) 
-    #puts "getSumValue"
     calcWeightAndValue(sgenome);
     @sum_value
   end
 
   def getSumWeight(sgenome) 
-    #puts "getSumWeight"
     calcWeightAndValue(sgenome);
     @sum_weight
   end
@@ -186,9 +184,6 @@ class Chl
 
     end
 
-    (0...@itemID.size).each do |ix| 
-      #puts "#{@itemID[ix]} #{@itemValue[ix]} #{@itemWeight[ix]} #{@itemQtys[ix]}"
-    end
 
 
     if @cutop == '>'
@@ -213,16 +208,13 @@ class Chl
 
   def printParams
 
-    puts  "\n"
-
-    #puts  "Input rows: " + @totalrows.to_s + "  Items in stock: " + @totalqty.to_s 
-    puts  "Items in stock: " + @totalqty.to_s 
-    puts sprintf("Total %s of all items in stock: %.2f \n" , @costTitle ,  @totalcost)
-    puts sprintf("Total %s of all items in stock: %.2f \n" , @beneTitle ,  @totalbene)
-    puts  "Goal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s
-    puts  sprintf("Possible solutions: %d" ,(2**@totalqty))
-
-    puts  "\n"
+    @so << "\n"
+    @so << "Items in stock: " + @totalqty.to_s 
+    @so << sprintf("Total %s of all items in stock: %.2f \n" , @costTitle ,  @totalcost)
+    @so << sprintf("Total %s of all items in stock: %.2f \n" , @beneTitle ,  @totalbene)
+    @so << "Goal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s
+    @so << sprintf("Possible solutions: %d" ,(2**@totalqty))
+    @so << "\n"
 
   end
 
@@ -233,7 +225,7 @@ class Chl
     #
     (0...@optionSize).each do |bitidx|
        if (winner.m_Data[bitidx])  
-         puts "#{@itemID[bitidx]} #{@itemValue[bitidx]} #{@itemWeight[bitidx]}"
+         @so << "#{@itemID[bitidx]} #{@itemValue[bitidx]} #{@itemWeight[bitidx]}"
        end
     end
   end
@@ -242,10 +234,10 @@ class Chl
   def printSolution(winner)
  
     # titles
-    puts sprintf("%s\n",@title)
+    @so << sprintf("%s\n",@title)
 
     # column headings
-    puts sprintf("%s,%s,%s",@itemTitle,@beneTitle,@costTitle)
+    @so << sprintf("%s,%s,%s",@itemTitle,@beneTitle,@costTitle)
 
     # print the winner
     printTally(winner, true)
@@ -253,7 +245,7 @@ class Chl
     # totals
     m_Value=getSumValue(winner)
     m_Weight=getSumWeight(winner)
-    puts sprintf("Solution totals: %s: %.2f, %s: %.2f ",@beneTitle, m_Value ,  @costTitle, m_Weight)
+    @so << sprintf("Solution totals: %s: %.2f, %s: %.2f ",@beneTitle, m_Value ,  @costTitle, m_Weight)
 
   end 
 
