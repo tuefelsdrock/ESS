@@ -12,7 +12,7 @@ get '/ess' do
 end
 
 get '/ess2' do
-  ai = Ess.new(20)   
+  ai = Ess.new(10)   
   ai.evolute('x')
   @so=ai.so
   cl = Chl.new

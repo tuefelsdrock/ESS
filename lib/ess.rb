@@ -118,13 +118,14 @@ class Ess
 
     sgenome = pop.get_sgenome(sgenonum) 
 
-    @so << sprintf("Gen: %3d Sol: %3d %s: %8.2f %s: %8.2f \n" ,pop.m_Generation , sgenonum ,  @opts.beneTitle , @opts.getSumValue(sgenome) ,  @opts.costTitle , @opts.getSumWeight(sgenome))
-
     # display the map of the sgenome: | = selected
-    @so << sgenome.m_Data.map { |c|  c ? '|' : '-' }.join
+    @so << '<font color=#008000>'
+    @so << sgenome.m_Data.map { |c|  c ? '<b>|</b>' : '-' }.join
+    @so << '</font>'
+
+    @so << sprintf("\nGen: %3d Sol: %3d %s: %8.2f %s: %8.2f \n" ,pop.m_Generation , sgenonum ,  @opts.beneTitle , @opts.getSumValue(sgenome) ,  @opts.costTitle , @opts.getSumWeight(sgenome))
 
   end 
-
 
 
   # evaluate solution for presence of a winner

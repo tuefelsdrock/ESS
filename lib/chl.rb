@@ -213,7 +213,6 @@ class Chl
     @so << sprintf("Total %s of all items in stock: %.2f \n" , @beneTitle ,  @totalbene)
     @so << sprintf("Possible solutions: %d" ,(2**@totalqty))
     @so << "\nGoal: " + @goal + " with "  + @cutname + " " + @cutop + " " + @cutval.to_s + "\n"
-    @so << "\n"
 
   end
 
