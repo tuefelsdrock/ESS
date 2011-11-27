@@ -6,8 +6,14 @@ require_relative 'ess'
 # 
 set :views, settings.root + '/../views'
 
+get '/' do
+  erb :index
+end
 
 get '/ess' do
+  cl = Chl.new
+  cl.readCSVFile('x')  
+  @so << cl.printSolution(ai.winner)
   erb :ess
 end
 
@@ -18,7 +24,6 @@ get '/ess2' do
   cl = Chl.new
   cl.readCSVFile('x')  
   @so << cl.printSolution(ai.winner)
- 
   erb :ess2
 
 end
