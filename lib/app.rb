@@ -29,6 +29,9 @@ get '/ess2' do
   erb :ess2
 end
  
+get '/ess3' do
+  erb :ess3
+end
 
 # rest-ful url
 get '/hello/:name' do

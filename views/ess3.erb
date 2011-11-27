@@ -1,0 +1,16 @@
+<%=
+  ai = Ess.new(5)
+  ai.evolute('x')
+  ai.so
+%>
+
+<a href=#solution>solution</a><p>
+<hr size=-1>
+<a name=solution>
+<%=
+  cl = Chl.new
+  cl.readCSVFile('x')  
+  @so = cl.printSolution(ai.winner)
+%>
+
+<a href=#top>top</a><p>
