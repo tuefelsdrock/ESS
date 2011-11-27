@@ -5,6 +5,7 @@ require_relative 'ess'
 
 # 
 set :views, settings.root + '/../views'
+set :public_folder, settings.root + '/../public'
 
 get '/' do
   erb :index
