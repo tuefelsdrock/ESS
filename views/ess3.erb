@@ -1,5 +1,5 @@
 <%=
-  ai = Ess.new(params[:gens].to_i)
+  ai = Ess.new(params[:epochs].to_i,params[:gens].to_i)
   ai.evolute('x')
   ai.so
 %>

@@ -32,13 +32,13 @@ class Ess
   attr_reader :winner        # the winning solution. 
   attr_reader :so            # output
 
-  def initialize( mg ) 
+  def initialize( me=3, mg=5 ) 
     @so="<pre>"
+    @max_epochs=me
     @max_gens=mg  
     @opts = Chl.new
     @population_size=60 
     @max_mutation_rate = 0.10  
-    @max_epochs=5             
     @gen_num=1
   end
 
