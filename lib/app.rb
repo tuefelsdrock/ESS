@@ -14,6 +14,7 @@ get '/ess' do
   cl = Chl.new
   cl.readCSVFile('x')  
   @so = cl.printParams
+  @io = cl.printInventory
   erb :ess
 end
 

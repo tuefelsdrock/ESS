@@ -28,10 +28,12 @@ class Chl
   attr_accessor :max_weight
   attr_accessor :min_value
   attr_reader :so          # output
+  attr_reader :io          # inventory output
 
 
   def initialize 
     @so=" "
+    @io=" "
     @itemTitle="item"
     @cutval=0.0;           # cutoff value
     @penalty = 3.0         # add this if sum exceeds maxweight in fitness function.
@@ -137,17 +139,13 @@ class Chl
     @cutname = "total volume"
     @cutop = "<"
 
+    #@cutval = 500
     @cutval = 1000
     csvitemID=['cellphone1','cellphone2','cpu1','cpu2','ram 1', 'ram 2', 'ram 3']
     csvitemValue=[199.99,155.99,75.50,123.45, 32.99, 26.26, 45.94 ]
     csvitemWeight=[100,99,23,22, 15,15,15]
     csvitemQtys=[10,25,20,20,15,15,10]
 
-    #@cutval = 500
-    #csvitemID=['cellphone1','cellphone2','cpu1','cpu2','ram 1', 'ram 2', 'ram 3']
-    #csvitemValue=[199.99,155.99,75.50,123.45, 32.99, 26.26, 45.94 ]
-    #csvitemWeight=[100,99,23,22, 15,15,15]
-    #csvitemQtys=[1,5,2,2,5,5,3]
 
 
     @totalrows = csvitemID.size  # count of item rows
@@ -204,6 +202,17 @@ class Chl
   end
 
 
+  def printInventory
+    csvitemID=['cellphone1','cellphone2','cpu1','cpu2','ram 1', 'ram 2', 'ram 3']
+    csvitemValue=[199.99,155.99,75.50,123.45, 32.99, 26.26, 45.94 ]
+    csvitemWeight=[100,99,23,22, 15,15,15]
+    csvitemQtys=[10,25,20,20,15,15,10]
+
+    (0...@csvitemID.size).each do |x|
+      @io << sprintf("%10s %10s %10s %10s \n",  csvitemID[x], csvitemValue[x], csvitemWeight[x], csvitemQtys[x] )
+    end
+
+  end
 
 
   def printParams
