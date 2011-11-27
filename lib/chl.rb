@@ -208,9 +208,9 @@ class Chl
     csvitemWeight=[100,99,23,22, 15,15,15]
     csvitemQtys=[10,25,20,20,15,15,10]
 
-    @io = sprintf("\n %10s %10s %10s %10s \n",  "Item", "Value", "Cost", "Qty in Stock" )
+    @io = sprintf("\n %10s %10s %10s %10s \n",  "Item", "Price", "Volume", "Qty in Stock" )
     (0...csvitemID.size).each do |x|
-      @io << sprintf("\n %10s %10s %10s %10s \n",  csvitemID[x], csvitemValue[x], csvitemWeight[x], csvitemQtys[x] )
+      @io << sprintf("\n %10s %10.2f %10.2f %8d \n",  csvitemID[x], csvitemValue[x], csvitemWeight[x], csvitemQtys[x] )
     end
     @io
 
