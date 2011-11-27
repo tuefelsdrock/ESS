@@ -18,8 +18,7 @@ get '/ess' do
 end
 
 get '/ess2' do
-  @gens = params[:name] 
-  ai = Ess.new(@gens)   
+  ai = Ess.new(params[:gens].to_i)   
   ai.evolute('x')
   @so=ai.so
   cl = Chl.new
