@@ -3,7 +3,7 @@ require_relative 'rpjwh'
 require_relative 'sgenome'
 
 # 
-# a culture is a multigenerational body of populations
+# a culture is a population
 #
 class Culture 
   
