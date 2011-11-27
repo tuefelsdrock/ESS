@@ -13,8 +13,8 @@ end
 get '/ess' do
   cl = Chl.new
   cl.readCSVFile('x')  
-  @so = cl.printParams
   @io = cl.printInventory
+  @so = cl.printParams
   erb :ess
 end
 
