@@ -13,7 +13,7 @@ end
 get '/ess' do
   cl = Chl.new
   cl.readCSVFile('x')  
-  @so << cl.printSolution(ai.winner)
+  @so = cl.printParams
   erb :ess
 end
 
@@ -25,7 +25,6 @@ get '/ess2' do
   cl.readCSVFile('x')  
   @so << cl.printSolution(ai.winner)
   erb :ess2
-
 end
  
 
