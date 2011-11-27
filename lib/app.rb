@@ -29,11 +29,6 @@ get '/ess2' do
   erb :ess2
 end
  
-get '/solution' do
-  cl = Chl.new
-  cl.readCSVFile('x')  
-  @so = cl.printSolution(ai.winner)
-end
 
 # rest-ful url
 get '/hello/:name' do
