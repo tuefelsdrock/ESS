@@ -29,9 +29,10 @@ get '/ess2' do
   erb :ess2
 end
  
-
-get '/e' do
-  erb :essout
+get '/solution' do
+  cl = Chl.new
+  cl.readCSVFile('x')  
+  @so = cl.printSolution(ai.winner)
 end
 
 # rest-ful url
@@ -47,14 +48,10 @@ get '/hello' do
 end
 
 
-get '/f' do
-  "<h1>Hello World</h1>"
-end
 
 get '/admin' do
   %{
     <h1>Admin Page</h1>
-    <h2>This is the stuff of admins</h2>
   }
 end
 
