@@ -1,14 +1,14 @@
 
-desc "`rake` will default to running `rake:spec`"
-task :default => :spec
+desc "`rake` will default to running `rake:run`"
+task :default => :run
 
 desc "Run all the rspec examples"
 task :spec do
   system "bundle exec rspec -c spec/*_spec.rb"
 end
 
-desc "Run the sample Sinatra sample"
-task :sinatra do
-  system "bundle exec sinatra lib/sinatra.rb"
+desc "run the app"
+task :run do
+  system "ruby lib/app.rb"
 end
 
