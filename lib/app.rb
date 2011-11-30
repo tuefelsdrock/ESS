@@ -33,25 +33,6 @@ get '/ess3' do
   erb :ess3
 end
 
-# rest-ful url
-get '/hello/:name' do
-  @name = params[:name] 
-  erb :hello
-end
-
-# non rest-ful url
-get '/hello' do
-  @name = params[:name] 
-  erb :hello
-end
-
-
-
-get '/admin' do
-  %{
-    <h1>Admin Page</h1>
-  }
-end
 
 
 
