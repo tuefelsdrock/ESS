@@ -17,6 +17,11 @@ class Culture
   attr_reader :m_Generation
   attr_accessor :m_MaxMutationRate     
 
+  ## BFaloona Notes
+  ##
+  ## 4. Redundant. There's no need for a getter method. Just change your attr_reader to ':current_size' 
+  ##    and you get #current_size method for free. :)
+
   def get_population_size 
     @m_CurrentSize 
   end

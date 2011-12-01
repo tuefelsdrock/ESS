@@ -1,0 +1,25 @@
+BFaloona Notes
+UWE-Ruby TA
+Nov 30, 2011
+
+Very interesting project. Many of my notes are style related, so please accept them
+as constructive ideas. 
+
+The specs you wrote for ruby looked clean and clear. 
+
+Regarding you project, In addition to the comments below, I made 4 comments in a 2 files, 
+marked with '## BFaloona Notes'.
+
+Great use of comments throughout, but in general you might want to focus more on code clarity 
+so others can read your code easier. Class names were a bit terse, and a few extra spaces in assignment
+statements might have helped.
+
+The web output was confusing to me, but I don't know the domain. The Readme could have used
+a paragraph explaining the app in a bit more detail (although I did find that in lib/ess.rb).
+
+In general it seemed like there were too many instance variables (but again, I don't know the domain).
+
+The big things to focus on if you refactor would be to make better use of erb (or some other template language)
+and to write some tests for it.
+
+Brandon
