@@ -7,6 +7,15 @@
 
 class Chl 
 
+  ## BFaloona Notes
+  ##
+  ## 1. No need to 'declare' instance variables like this.
+  ##    In fact, it's not doing anything since you are in the Class scope. 
+  ##    Just set them in the initialize method, or as needed. 
+  ## 2. Common Ruby practice uses underscores for variable_names and method_names, rather than variableName. 
+  ##    Both are valid.
+  ##
+
   @cutval
   @itemID = []           # name
   @itemValue = []        # benefit
@@ -68,7 +77,7 @@ class Chl
   
     @sum_weight=0
     @sum_value=0
- 
+
     (0...@optionSize).each do |idx|
       if possible_solution.m_Data[idx] 
 
@@ -87,6 +96,12 @@ class Chl
  
     (0...@optionSize).each do |idx|
       calcWeightAndValue(possible_solution)
+
+      ## BFaloona Notes
+      ##
+      ## 3. You could have skipped the false at the end of this method and used just: 
+      ##    'return true if (@sum_weight <= maxc && ... '
+      ##    Methods return nil by default.
 
       if (@sum_weight <= maxc && @sum_value >= minben  )    
         return true
