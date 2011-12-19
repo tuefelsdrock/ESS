@@ -7,20 +7,8 @@
 
 class Chl 
 
-  @cutval
-  @itemID = []           # name
-  @itemValue = []        # benefit
-  @itemWeight = []       # cost
-  @itemTitle
-  @totalcost
-  @totalbene
-  @totalqty
-  @totalrows
-  @penalty            
 
   attr_reader :sum_value
-  @sum_weight
-
   attr_reader :beneTitle
   attr_reader :costTitle
   attr_reader :optionSize
@@ -32,6 +20,9 @@ class Chl
 
 
   def initialize 
+    @itemID = []           # name
+    @itemValue = []        # benefit
+    @itemWeight = []       # cost
     @so=" "
     @itemTitle="item"
     @cutval=0.0;           # cutoff value
@@ -81,22 +72,23 @@ class Chl
   end
 
 
-  # evaluate sgenome for win/lose
+ # evaluate sgenome for win/lose
   #
-  def isWinner(possible_solution, maxc, minben) 
- 
+  def isWinner(possible_solution, maxc, minben)
+
     (0...@optionSize).each do |idx|
       calcWeightAndValue(possible_solution)
 
-      if (@sum_weight <= maxc && @sum_value >= minben  )    
+      if (@sum_weight <= maxc && @sum_value >= minben  )
         return true
       end
 
-    end 
+    end
 
     false
 
   end
+
 
 
   # if all of the items total to less than minben, no success possible 
