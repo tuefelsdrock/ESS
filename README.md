@@ -7,6 +7,7 @@ Lots more to do still:
 * add a csv reader
 
 To start, 
-1) run rake.
+0) bundle
+1) rake
 2) open a browser, http://127.0.0.1:4567  
 3) click on the header icon
