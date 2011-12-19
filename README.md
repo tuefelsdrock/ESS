@@ -19,12 +19,29 @@ Java and wanted to see what refactoring it in ruby would present as challenges.
 I was pleasantly surprised at the speed and intuitiveness of using Ruby!
 
 
+To start:
 
-
-To start, 
 bundle
 rake
 open a browser, enter: http://127.0.0.1:4567/ess
+click on the Go button.
+
+You'll see several lines like this:
+
+|----|--|----|--|------|---|--|-----|--||-------|----|----------------|-------------------|-|--------|----------|--
+Gen:   1 Sol:  18 value:  2005.59 volume:   992.00 
+
+The "|---|--" line represents a single character for each item in the inventory, with the | representing a choice.
+
+this is the sum of the chosen items -> value:  2005.59 
+this is the size of the chosen items -> volume:   992.00 
+
+Reload the page for another try.
+
+the 'solution' link shows the actual items chosen from inventory.
+
+
+tested with 1.9.2.  probably requires 1.9 at least.
 
 
 more to do: 
@@ -32,4 +49,3 @@ more to do:
 * add a csv reader
 * put a real UI (rails) on it.
 
-tested with 1.9.2.  probably requires 1.9 at least.
