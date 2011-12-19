@@ -7,11 +7,6 @@ require_relative 'sgenome'
 #
 class Culture 
   
-  @m_Length              # length of all sgenomes
-  @m_MaxSize             # size of the population, eg the number of sgenomes in the population
-  @sgenoms = []          # the population, an array of sgenomes
-  @m_CrossoverMask = []  # used to mutate during crossover via a probability function.
-  @options               # the choicelist object
 
   attr_reader :m_CurrentSize
   attr_reader :m_Generation
@@ -33,6 +28,8 @@ class Culture
   #
   def initialize(size, length, maxMutationRate, oparg)  
 
+    @sgenoms = []          # the population, an array of sgenomes
+    @m_CrossoverMask = []  # used to mutate during crossover via a probability function.
     @options=oparg      # to refer to choices when evaluating.
     @m_Length=length
     @m_MaxSize = size
