@@ -17,14 +17,20 @@ brute force approach can become computationally expensive.
 The reason I chose this particular problem is that I originally wrote it in 
 Java and wanted to see what refactoring it in ruby would present as challenges.
 I was pleasantly surprised at the speed and intuitiveness of using Ruby!
+So far, I've spent about 6 hours on the project.
+
+It has a minimal Sinatra Frontend.
 
 
 To start:
 
-bundle
-rake
-open a browser, enter: http://127.0.0.1:4567/ess
-click on the Go button.
+* bundle
+
+* rake
+
+* open a browser, enter: http://127.0.0.1:4567/ess
+
+* click on the Go button.
 
 You'll see several lines like this:
 
@@ -34,6 +40,7 @@ Gen:   1 Sol:  18 value:  2005.59 volume:   992.00
 The "|---|--" line represents a single character for each item in the inventory, with the | representing a choice.
 
 this is the sum of the chosen items -> value:  2005.59 
+
 this is the size of the chosen items -> volume:   992.00 
 
 Reload the page for another try.
