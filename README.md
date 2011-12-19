@@ -50,6 +50,13 @@ the 'solution' link shows the actual items chosen from inventory.
 
 tested with 1.9.2.  probably requires 1.9 at least.
 
+Classes:
+
+* Choice List   Inventory Attributes and methods, fitness function
+* Sgenome  A flyweight instance of one selection
+* Culture  Population of sgenomes, inheritance, mutation functions
+* Ess  Evolutionary methods
+* Rpjwh Number methods
 
 more to do: 
 
