@@ -22,10 +22,9 @@ I was pleasantly surprised at the speed and intuitiveness of using Ruby!
 
 
 To start, 
-0) bundle
-1) rake
-2) open a browser, http://127.0.0.1:4567  
-3) click on the header icon
+bundle
+rake
+open a browser, enter: http://127.0.0.1:4567/ess
 
 
 more to do: 
